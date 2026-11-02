@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f2">
+<title>Sang Sang · Bàn học & phát triển bản thân</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--ink:#382630;--muted:#967d88;--pink:#e782a0;--rose:#f5b8c8;--line:#f0dce2;--paper:rgba(255,255,255,.77);--shadow:0 18px 50px rgba(173,102,127,.11);--deep:#bd607d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:'DM Sans','Manrope',sans-serif;background:radial-gradient(ellipse at 83% 6%,#ffdce6 0,transparent 31%),radial-gradient(ellipse at 46% 47%,#fce8ea 0,transparent 36%),linear-gradient(135deg,#fff6f0,#fff0f3 53%,#f8e8f0);min-height:100vh}
+.shell{display:grid;grid-template-columns:222px minmax(0,1fr);gap:30px;max-width:1510px;margin:auto;padding:20px}
+.side{height:calc(100vh - 40px);min-height:700px;position:sticky;top:20px;border:1px solid #fff;background:rgba(255,250,249,.73);backdrop-filter:blur(18px);border-radius:27px;padding:21px 15px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.brand{font-size:13px;font-weight:800;padding:5px 9px 24px;letter-spacing:.035em}.brand .cn{display:block;color:#a58c96;font-size:11px;margin-top:4px;font-weight:500}
+.navlabel{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#b49ba4;padding:11px 10px 7px}
+.nav a{display:flex;align-items:center;gap:10px;padding:10px 11px;margin:3px 0;border-radius:14px;color:#785d68;text-decoration:none;font-size:12px;transition:.2s}
+.nav a:hover,.nav a.active{background:#fff;color:#bd5979;box-shadow:0 5px 18px #e9bcc926}
+.nav i{font-style:normal;width:19px;text-align:center;font-size:15px}
+.sidefoot{margin-top:auto;border-top:1px solid var(--line);padding:15px 9px 2px;color:#a18791;font-size:10px;line-height:1.75}
+.main{max-width:1190px;width:100%;margin:0 auto;padding:7px 4px 45px}
+.topline{display:flex;align-items:center;justify-content:space-between;color:#927985;font-size:11px;padding:4px 3px 27px}
+.topright{display:flex;gap:18px;align-items:center}.avatar{width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;color:#be607e;font-weight:800}
+.hero{position:relative;overflow:hidden;min-height:211px;border:1px solid rgba(255,255,255,.92);border-radius:27px;padding:27px 31px;background:linear-gradient(116deg,rgba(255,255,255,.82),rgba(255,231,237,.77));box-shadow:var(--shadow);margin-bottom:18px}
+.hero:after{content:'✿';position:absolute;right:14%;bottom:-72px;color:#f5c8d4;font-size:240px;opacity:.26;transform:rotate(-20deg);pointer-events:none}
+.eyebrow{font-size:10px;letter-spacing:.13em;color:#c16c86;font-weight:800;margin-bottom:9px}
+.hero h1{font-size:clamp(32px,4.3vw,51px);letter-spacing:-.055em;margin:0 0 8px;line-height:1.06;position:relative;z-index:1}
+.hero p{margin:0;color:#907781;font-size:13px;line-height:1.6;max-width:640px;position:relative;z-index:1}
+.hero .quote{margin-top:18px;font-size:12px;color:#a36b7e;font-style:italic}
+.spark{color:#db7997}
+.welcome{position:absolute;right:24px;top:25px;border-radius:19px;padding:15px 17px;background:rgba(255,255,255,.75);box-shadow:0 8px 24px #ba84951c;min-width:184px;border:1px solid #fff;z-index:2}
+.welcome strong{display:block;font-size:13px}.welcome small{color:var(--muted);font-size:10px;line-height:1.5;display:block;margin-top:3px}
+.quickbar{display:grid;grid-template-columns:minmax(150px,1fr) auto;align-items:center;gap:11px;margin:0 0 31px;padding:8px 10px 8px 17px;background:rgba(255,255,255,.79);border:1px solid white;border-radius:18px;box-shadow:var(--shadow)}
+.quickbar input{border:0;background:none;outline:0;min-width:0;font:inherit;color:var(--ink);font-size:12px;padding:7px 0}
+.actions{display:flex;gap:6px}.quickbar button{border:1px solid #f2dce3;border-radius:11px;padding:9px 11px;background:#fff8fa;color:#a45671;font:inherit;font-size:10px;font-weight:700;cursor:pointer;transition:.2s;white-space:nowrap}
+.quickbar button:hover{background:#f9e3ea;transform:translateY(-1px)}
+.section{margin:0 0 33px;scroll-margin-top:18px}
+.secthead{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
+.secthead h2{font-size:17px;margin:0;letter-spacing:-.03em}.secthead p{font-size:10px;color:#ac909a;margin:0}
+.cards{display:grid;gap:13px}.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{border:1px solid rgba(255,255,255,.93);background:var(--paper);backdrop-filter:blur(14px);border-radius:20px;box-shadow:var(--shadow);padding:17px}
+.metric{min-height:144px;position:relative;overflow:hidden}
+.metric:after{content:attr(data-flower);position:absolute;right:12px;bottom:-12px;font-size:62px;color:#f5d5df;opacity:.53;transform:rotate(-12deg)}
+.metric label{font-size:10px;color:#987c87;position:relative;z-index:1}
+.metric .value{font-size:29px;font-weight:800;letter-spacing:-.06em;margin:13px 0 1px;position:relative;z-index:1}
+.metric .target{font-size:10px;color:#b18f9c;position:relative;z-index:1}
+.metric .caption{font-size:10px;color:#836a74;position:relative;z-index:1;margin:9px 0 0;line-height:1.5}
+.progress{height:5px;background:#f3e4e9;border-radius:20px;overflow:hidden;margin-top:10px;position:relative;z-index:2}
+.progress span{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#e9a0b4,#d96d8e)}
+.two{grid-template-columns:repeat(3,minmax(0,1fr))}
+.module{min-height:223px}.module.wide{grid-column:span 2;background:linear-gradient(135deg,rgba(255,255,255,.89),rgba(255,232,239,.86))}
+.badge{display:inline-flex;padding:5px 9px;border-radius:99px;background:#ffedf1;color:#bd6380;font-size:9px;font-weight:800;margin-bottom:9px;letter-spacing:.04em}
+.module h3{margin:0 0 4px;font-size:15px}.zh{display:block;color:#a17f8c;font-size:10px;margin:0 0 10px}
+.description{font-size:10px;color:#876d78;line-height:1.5;margin:0 0 12px}
+.tilegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.tile{background:rgba(255,255,255,.72);border:1px solid #f3e2e7;border-radius:12px;padding:10px;min-height:65px}
+.tile strong{display:block;color:#bd7890;font-size:10px;margin-bottom:5px}.tile span{display:block;font-size:10px;line-height:1.45;color:#725964}
+.list{display:grid;gap:7px}.listitem{display:flex;align-items:center;gap:8px;padding:8px 9px;border-radius:11px;background:rgba(255,255,255,.66);font-size:10px;color:#735d67}
+.check{width:15px;height:15px;border:1px solid #e9bcc9;border-radius:50%;flex:none;background:#fff9fb}
+.quicklinks{grid-template-columns:repeat(3,minmax(0,1fr))}
+.quicklink{padding:15px 16px;display:flex;gap:11px;align-items:flex-start;min-height:86px}
+.bubble{flex:none;width:32px;height:32px;border-radius:12px;background:#ffedf1;display:grid;place-items:center;color:#c66b88;font-size:14px}
+.quicklink strong{display:block;font-size:11px;margin-bottom:4px}.quicklink p{font-size:10px;color:#987d87;margin:0;line-height:1.5}
+.footer{text-align:center;color:#b196a0;font-size:10px;padding:6px}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:#593b48;color:white;border-radius:12px;padding:11px 16px;font-size:11px;opacity:0;transition:.25s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1000px){.shell{grid-template-columns:185px minmax(0,1fr);gap:19px}.four{grid-template-columns:repeat(2,minmax(0,1fr))}.welcome{position:static;display:inline-block;margin-top:15px}.hero{min-height:0}.hero:after{right:0}}
+@media(max-width:700px){.shell{display:block;padding:11px}.side{position:static;height:auto;min-height:0;padding:11px 12px;margin-bottom:15px;display:block}.brand{padding:3px 5px 10px}.brand .cn{display:inline;margin-left:6px}.navlabel,.sidefoot{display:none}.nav{display:flex;overflow:auto;gap:4px}.nav a{white-space:nowrap;padding:8px 9px;font-size:10px}.nav i{font-size:13px}.topline{padding:6px 3px 16px}.topright{gap:9px}.hero{padding:22px 20px;border-radius:22px}.hero h1{font-size:36px}.welcome{margin-top:15px}.quickbar{grid-template-columns:1fr;margin-bottom:25px}.actions{display:grid;grid-template-columns:1fr}.quickbar button{text-align:left}.four,.two,.quicklinks{grid-template-columns:1fr}.module.wide{grid-column:span 1}.module{min-height:0}.tilegrid{grid-template-columns:1fr}.secthead p{max-width:130px;text-align:right;line-height:1.4}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand">✿ SANG SANG 的工作台<span class="cn">Bàn làm việc của Sang Sang</span></div>
+  <div class="navlabel">Học tập · 学习</div>
+  <nav class="nav">
+    <a class="active" href="#overview"><i>♡</i>Tổng quan · 总览</a>
+    <a href="#study"><i>⌂</i>Học tập · 学习</a>
+    <a href="#ielts"><i>✧</i>IELTS · 雅思</a>
+    <a href="#skills"><i>☼</i>Kỹ năng mềm · 软技能</a>
+  </nav>
+  <div class="navlabel">Phát triển bản thân · 自我成长</div>
+  <nav class="nav">
+    <a href="#habits"><i>◷</i>Thói quen · 习惯</a>
+    <a href="#goals"><i>☆</i>Mục tiêu · 目标</a>
+    <a href="#notes"><i>▤</i>Ghi chú · 笔记</a>
+  </nav>
+  <div class="sidefoot">Mỗi ngày tiến lên một chút là tuyệt rồi!<br>每天进步一点点，就很棒啦！ ✨</div>
+</aside>
+<main class="main">
+  <div class="topline"><span id="date">Hôm nay · 今天</span><div class="topright"><span>Chào Sang Sang · 嗨，Sang Sang</span><div class="avatar">🌸</div></div></div>
+  <section class="hero" id="overview">
+    <div class="eyebrow">SANG SANG · VŨ HỒ SANG SANG</div>
+    <h1>Chào Sang Sang! <span class="spark">Hôm nay thật rực rỡ nhé ✨</span></h1>
+    <p>Mình đang học Quản trị kinh doanh tại Trường Đại học Công Thương TP.HCM.<br>我正在胡志明市工业与贸易大学学习工商管理。</p>
+    <p class="quote">“Cứ tiến từng bước nhỏ, bạn sẽ đến nơi mình muốn.” · “一步一步向前走，你终会抵达想去的地方。”</p>
+    <div class="welcome"><strong>🌷 Một ngày mới thật vui!</strong><small>Chúc bạn học tốt và luôn tin vào mình.<br>祝你学习顺利，也要一直相信自己。</small></div>
+  </section>
+  <section class="quickbar" id="notes">
+    <input id="quickInput" placeholder="Ghi nhanh một việc học, ý tưởng hay thói quen… · 快速记录待办、想法或习惯…">
+    <div class="actions">
+      <button onclick="saveQuick('Việc cần làm · 待办')">＋ Ghi việc cần làm · 记录待办</button>
+      <button onclick="saveQuick('Tiến độ học · 学习进度')">✧ Cập nhật tiến độ học · 更新学习进度</button>
+      <button onclick="saveQuick('Thói quen mới · 新习惯')">♡ Thêm thói quen mới · 添加新习惯</button>
+    </div>
+  </section>
+  <section class="section">
+    <div class="secthead"><h2>Hành trình của Sang Sang · Sang Sang 的成长进度</h2><p>Mục tiêu lớn, chia thành bước nhỏ · 大目标，拆成小步骤</p></div>
+    <div class="cards four">
+      <article class="card metric" data-flower="✿"><label>GPA hiện tại · 当前 GPA</label><div class="value">3.5</div><div class="target">Mục tiêu 3.8 · 目标 3.8</div><div class="progress"><span style="width:92%"></span></div><p class="caption">Bạn đã rất gần mục tiêu học tập của mình! · 你已经离学习目标很近啦！</p></article>
+      <article class="card metric" data-flower="✧" id="ielts"><label>Hành trình IELTS · IELTS 之旅</label><div class="value">Bắt đầu</div><div class="target">Mục tiêu 6.0 · 目标 6.0</div><div class="progress"><span style="width:7%"></span></div><p class="caption">Chưa thi IELTS — đây là điểm khởi đầu mới. · 还没参加雅思考试，这是新的起点。</p></article>
+      <article class="card metric" data-flower="♡" id="skills"><label>Kỹ năng mềm · 软技能</label><div class="value">Đang rèn</div><div class="target">Giao tiếp · tự tin · làm việc nhóm</div><p class="caption">Từng trải nghiệm nhỏ sẽ giúp bạn tự tin hơn. · 每一次小小的尝试，都会让你更自信。</p></article>
+      <article class="card metric" data-flower="☼"><label>Tự giác & kỷ luật · 自律与坚持</label><div class="value">Mỗi ngày</div><div class="target">Học đúng giờ · tập trung · ôn bài</div><p class="caption">Kiên trì tạo nên nhịp học tập vững vàng. · 坚持会带来稳定的学习节奏。</p></article>
+    </div>
+  </section>
+  <section class="section" id="study">
+    <div class="secthead"><h2>Học tập & phát triển · 学习与成长</h2><p>Học theo cách phù hợp với mình · 按自己的节奏学习</p></div>
+    <div class="cards two">
+      <article class="card module wide"><span class="badge">ƯU TIÊN SỐ 1 · 第一优先</span><h3>Học tập · 学习</h3><span class="zh">Từng bước nâng kết quả và xây nền tảng vững chắc。一步步提升成绩，打好基础。</span><p class="description">Mục tiêu của mình là GPA 3.8 và IELTS 6.0; mỗi ngày hoàn thành tốt một việc nhỏ. · 我的目标是 GPA 3.8 和雅思 6.0，每天认真完成一件小事。</p><div class="tilegrid">
+        <div class="tile"><strong>01 · GPA</strong><span>Hiện tại 3.5, hướng đến 3.8。当前 3.5，目标 3.8。</span></div>
+        <div class="tile"><strong>02 · IELTS</strong><span>Chưa thi, mục tiêu 6.0。还没考试，目标 6.0。</span></div>
+        <div class="tile"><strong>03 · Bài tập</strong><span>Hoàn thành bài tập đúng hạn。按时完成作业。</span></div>
+      </div></article>
+      <article class="card module"><span class="badge">TỰ TIN HƠN · 更加自信</span><h3>Kỹ năng mềm · 软技能</h3><span class="zh">Rèn sự tự tin và kết nối tốt hơn. · 培养自信，更好地与人交流。</span><div class="list">
+        <div class="listitem"><span class="check"></span>Giao tiếp · 沟通表达</div>
+        <div class="listitem"><span class="check"></span>Tự tin trước đám đông · 在人群面前自信表达</div>
+        <div class="listitem"><span class="check"></span>Làm việc nhóm · 团队合作</div>
+      </div></article>
+      <article class="card module" id="habits"><span class="badge">THÓI QUEN TỐT · 好习惯</span><h3>Tự giác & kỷ luật · 自律与坚持</h3><span class="zh">Giữ nhịp học đều đặn, không cần hoàn hảo. · 保持稳定的学习节奏，不必追求完美。</span><div class="list">
+        <div class="listitem"><span class="check"></span>Học đúng giờ · 按时学习</div>
+        <div class="listitem"><span class="check"></span>Tập trung khi học · 学习时专心</div>
+        <div class="listitem"><span class="check"></span>Ôn bài mỗi ngày · 每天复习</div>
+      </div></article>
+    </div>
+  </section>
+  <section class="section" id="goals">
+    <div class="secthead"><h2>Ba lối tắt của mình · 我的快捷入口</h2><p>Chạm vào điều muốn bắt đầu · 点开想开始的事情</p></div>
+    <div class="cards quicklinks">
+      <article class="card quicklink"><div class="bubble">✎</div><div><strong>Kế hoạch học tập · 学习计划</strong><p>Xem những việc học bạn muốn hoàn thành hôm nay. · 查看今天想完成的学习任务。</p></div></article>
+      <article class="card quicklink"><div class="bubble">✧</div><div><strong>Luyện IELTS · 雅思练习</strong><p>Tiến gần hơn đến mục tiêu IELTS 6.0 mỗi ngày. · 每天向雅思 6.0 更进一步。</p></div></article>
+      <article class="card quicklink"><div class="bubble">♡</div><div><strong>Rèn kỹ năng mềm · 软技能提升</strong><p>Từng bước giao tiếp tự tin và phối hợp tốt hơn. · 一步步自信沟通、默契合作。</p></div></article>
+    </div>
+  </section>
+  <div class="footer">Từng bước nhỏ, Sang Sang sẽ tỏa sáng theo cách của mình · 一步一步，Sang Sang 会以自己的方式闪闪发光 ✨</div>
+</main>
+</div>
+<div class="toast" id="toast">Đã lưu trong trình duyệt · 已保存在浏览器中</div>
+<script>
+const viDate=new Intl.DateTimeFormat('vi-VN',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
+const zhDate=new Intl.DateTimeFormat('zh-CN',{weekday:'long',month:'numeric',day:'numeric'}).format(new Date());
+document.getElementById('date').textContent=viDate+' · '+zhDate;
+const quickInput=document.getElementById('quickInput');
+quickInput.value=localStorage.getItem('sangsang-quick-draft')||'';
+quickInput.addEventListener('input',()=>localStorage.setItem('sangsang-quick-draft',quickInput.value));
+function saveQuick(kind){
+  const value=quickInput.value.trim();
+  if(!value){quickInput.focus();quickInput.placeholder='Nhập nội dung trước nhé… · 请先输入内容…';return;}
+  const saved=JSON.parse(localStorage.getItem('sangsang-quick-items')||'[]');
+  saved.unshift({kind:kind,text:value,createdAt:new Date().toISOString()});
+  localStorage.setItem('sangsang-quick-items',JSON.stringify(saved.slice(0,30)));
+  quickInput.value='';localStorage.removeItem('sangsang-quick-draft');
+  const toast=document.getElementById('toast');toast.textContent=kind+' · Đã lưu! · 已保存！';toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),2200);
+}
+</script>
+</body>
+</html>
